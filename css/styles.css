@@ -1,0 +1,351 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    line-height: 1.6;
+  }
+
+ 
+  
+
+  
+
+  
+  /* Body Background Image */
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Create a blurred background container */
+  .background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/images/3on3.jpg') no-repeat center center fixed; /* Background Image */
+    background-size: cover; /* Ensure the image covers the full screen */
+    filter: blur(8px); /* Apply blur effect */
+    z-index: -1; /* Ensure it's behind the content */
+  }
+  
+  /* Create an overlay to darken the background and make text readable */
+  body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    z-index: -1; /* Ensure overlay is behind the content */
+  }
+  
+  /* Header */
+  header {
+    background: linear-gradient(90deg, #0056B3, #007BFF); /* Gradient background */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  header h1 {
+    font-size: 2rem;
+  }
+  
+  header nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 10px 0;
+  }
+  
+  header nav ul li {
+    margin: 0 15px;
+  }
+  
+  header nav ul li a {
+    color: #FFFFFF; /* White text color */
+    text-decoration: none; /* Remove underline */
+    padding: 10px 20px; /* Add padding around links */
+    font-weight: bold; /* Bold text */
+    transition: color 0.3s ease, background-color 0.3s ease; /* Smooth hover effect */
+  }
+  
+  header nav ul li a:hover {
+    color: #FFD700; /* Gold color on hover */
+    background-color: rgba(255, 255, 255, 0.2); /* Light background on hover */
+    border-radius: 5px; /* Rounded corners for hover effect */
+  }
+
+  /* Main Content */
+   .registration-main {
+    padding: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative; /* Ensure this stays above the blurred background */
+    z-index: 1;
+  }
+  
+  /* Main Content */
+  main {
+    display: flex;
+    justify-content: flex-start;
+    padding: 40px;
+    margin: 0 auto;
+    max-width: 1200px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    position: relative; /* Ensure this stays above the blurred background */
+  }
+  
+  .hero {
+    flex: 1;
+    text-align: left;
+    padding: 20px;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  
+  .cta-button {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 25px;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .cta-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .cta-button .arrow {
+    margin-left: 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  .cta-button:hover .arrow {
+    transform: translateX(5px);
+  }
+  
+  /* Tournament Details */
+  .details {
+    flex: 1;
+    padding: 20px;
+    margin-left: 30px;
+    background-color: #F8F9FA;
+  }
+  
+  .details h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333333
+  }
+  
+  .details ul {
+    list-style-type: none;
+    color: #333333
+  }
+  
+  .details ul li {
+    font-size: 1.1rem;
+    margin: 10px 0;
+  }
+  
+  /* Enlarged Boxes for Registration, Rules, and Contact Pages */
+  .registration-box,
+  .rules-box,
+  .contact-box {
+    width: 100%;
+    min-height: 400px; /* Increased minimum height */
+    padding: 30px; /* Added more padding */
+    margin-bottom: 20px;
+    border: 2px solid #007bff; /* Add border for emphasis */
+    border-radius: 10px;
+    background-color: #f0f8ff; /* Light blue background for better visibility */
+  }
+  
+  .registration-box h2,
+  .rules-box h2,
+  .contact-box h2 {
+    margin-bottom: 20px;
+    color: #007bff;
+  }
+  
+  .registration-box p,
+  .rules-box p,
+  .contact-box p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+  }
+  
+  /* Form Layout for Two Columns */
+  .form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  
+  .form-group {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    font-weight: bold;
+    margin: 15px 0 5px;
+  }
+  
+  input,
+  select,
+  textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  form button {
+    display: block;
+    background-color: #0056B3;
+    color: white;
+    padding: 15px 25px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin: 20px auto; /* Center button and add spacing above it */
+  }
+  
+  form button:hover {
+    background-color: #0056b3;
+    display: block;
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    background-color: #002147;
+    color: #F0F0F0;
+    padding: 20px 0;
+    font-size: 0.9rem;
+  }
+  
+  /* Ensure footer stays at the bottom */
+  body > footer {
+    margin-top: auto;
+  }
+  
+  /* Hero Section */
+  .hero {
+    text-align: left;
+    background-color: #ffffff;
+    color: #003366;
+    padding: 50px 20px;
+    margin-bottom: 20px;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #000000
+  }
+  
+  .hero .cta-button {
+    background-color: #007BFF;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+  
+  .hero .cta-button:hover {
+    background-color: #0056B3;
+    color: white;
+  }
+
+  /* Style for the tournament image */
+.tournament-image {
+    display: block;
+    width: 100%;
+    max-width: 600px; /* Prevent the image from being too large */
+    margin: 20px auto 0; /* Add spacing above and center the image */
+    border-radius: 10px; /* Optional: rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Optional: shadow for better emphasis */
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    header nav ul li {
+      margin: 10px 0;
+    }
+  
+    .hero h1 {
+      font-size: 2rem;
+    }
+  
+    .hero p {
+      font-size: 1rem;
+    }
+  
+    form input,
+    form select,
+    form textarea {
+      font-size: 0.9rem;
+    }
+  
+    .registration-box,
+    .rules-box,
+    .contact-box {
+      min-height: 300px; /* Reduce height slightly for mobile */
+      padding: 20px; /* Adjust padding */
+    }
+  
+    /* Stack form fields vertically on small screens */
+    .form-row {
+      flex-direction: column;
+    }
+    
+    
+  }
+  
