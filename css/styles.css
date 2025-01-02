@@ -12,12 +12,6 @@
     line-height: 1.6;
   }
 
- 
-  
-
-  
-
-  
   /* Body Background Image */
   body {
     display: flex;
@@ -60,7 +54,8 @@
   }
   
   header h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
+    font-weight: bold;
   }
   
   header nav ul {
@@ -103,13 +98,16 @@
     z-index: 1;
   }
   
-  /* Main Content */
-  main {
+ /* Main Content */
+main {
     display: flex;
     justify-content: flex-start;
-    padding: 40px;
+    flex-direction: column; /* Stack children vertically */
+    padding: 20px;
     margin: 0 auto;
-    max-width: 1200px;
+    width: 50%; /* Use a percentage-based width for responsiveness */
+    max-width: 1200px; /* Maximum width for large screens */
+    min-width: 300px; /* Minimum width for smaller screens */
     background: white;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
@@ -124,11 +122,13 @@
   
   .hero h1 {
     font-size: 2.5rem;
+    font-weight: bold;
   }
   
   .hero p {
     font-size: 1.2rem;
     margin-bottom: 20px;
+    color: #6c757d;
   }
   
   .cta-button {
@@ -159,10 +159,11 @@
   /* Tournament Details */
   .details {
     flex: 1;
+    background-color: white;
+    border-radius: 10px;
     padding: 20px;
-    margin-left: 30px;
-    background-color: #F8F9FA;
-  }
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
   
   .details h3 {
     font-size: 2rem;
@@ -290,10 +291,11 @@
   }
   
   .hero .cta-button {
-    background-color: #007BFF;
+    background: linear-gradient(90deg, #007BFF, #0056B3);
     color: #ffffff;
     padding: 10px 20px;
     font-size: 1rem;
+    transition: transform 0.2s ease;
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
@@ -301,6 +303,7 @@
   
   .hero .cta-button:hover {
     background-color: #0056B3;
+    transform: scale(1.05); /* Slight enlargement on hover */
     color: white;
   }
 
@@ -315,7 +318,7 @@
   }
   
   /* Responsive Design */
-  @media (max-width: 768px) {
+  @media (max-width: 480px) {
     header nav ul li {
       margin: 10px 0;
     }
@@ -345,6 +348,7 @@
     .form-row {
       flex-direction: column;
     }
+
     
     
   }
