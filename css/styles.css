@@ -7,8 +7,8 @@
   
   html, body {
     height: 100%;
-    font-family: 'Arial', sans-serif;
-    color: #333;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f9;
     line-height: 1.6;
   }
 
@@ -16,6 +16,16 @@
   body {
     display: flex;
     flex-direction: column;
+    background-color: #f4f4f9;
+  }
+
+  .container {
+    max-width: 600px;
+    margin: 50px auto;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
   }
   
   /* Create a blurred background container */
@@ -77,7 +87,7 @@
     transition: color 0.3s ease, background-color 0.3s ease; /* Smooth hover effect */
   }
   
-  header nav ul li a:hover {
+  header nav ul li a:hover  {
     color: #FFD700; /* Gold color on hover */
     background-color: rgba(255, 255, 255, 0.2); /* Light background on hover */
     border-radius: 5px; /* Rounded corners for hover effect */
@@ -99,19 +109,18 @@
   }
   
  /* Main Content */
-main {
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: column; /* Stack children vertically */
-    padding: 20px;
-    margin: 0 auto;
-    width: 50%; /* Use a percentage-based width for responsiveness */
-    max-width: 1200px; /* Maximum width for large screens */
-    min-width: 300px; /* Minimum width for smaller screens */
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    position: relative; /* Ensure this stays above the blurred background */
+    main {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column; /* Stack children vertically */
+        padding: 20px;
+        margin: 0 auto;
+        width: 50%; /* Use a percentage-based width for responsiveness */
+        
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        position: relative; /* Ensure this stays above the blurred background */
   }
   
   .hero {
@@ -194,11 +203,11 @@ main {
     background-color: #f0f8ff; /* Light blue background for better visibility */
   }
   
-  .registration-box h2,
-  .rules-box h2,
-  .contact-box h2 {
+  h2 {
+    text-align: center;
+    font-size: 24px;
     margin-bottom: 20px;
-    color: #007bff;
+    color: #333;
   }
   
   .registration-box p,
@@ -216,27 +225,142 @@ main {
   }
   
   .form-group {
-    flex: 1;
-    min-width: 200px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
   }
   
   label {
-    display: block;
     font-weight: bold;
-    margin: 15px 0 5px;
+    color: #555;
   }
   
-  input,
-  select,
-  textarea {
+  input, select {
     width: 100%;
-    padding: 15px;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1rem;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
   }
+
+  input:focus, select:focus {
+    outline: none;
+    border-color: #007BFF;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+
+  .payment {
+    margin-top: 20px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    text-align: center;
+  }
+
+  .payment span {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }
+
+  .btn {
+    background: linear-gradient(90deg, #007BFF, #0056B3);
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  .btn:hover {
+    background: linear-gradient(90deg, #0056B3, #007BFF);
+    transform: scale(1.05);
+  }
+
+  .consent {
+    display: flex;
+    justify-content: space-between; /* Spread label and checkbox */
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+
+    /* Specific styles for checkboxes */
+    input[type="checkbox"] {
+        width: auto; /* Override width for checkboxes */
+        padding: 10px;  /* Remove unnecessary padding */
+        font-size: 16px; /* Adjust checkbox size if needed */
+        margin: 30;   /* Remove margin that may affect its appearance */
+        box-shadow: none; /* Remove box-shadow for checkboxes */
+    }
+
+/* Acknowledgment and waiver checkbox styles */
+.consent input[type="checkbox"] {
+    width: auto; /* Ensure checkbox width is appropriate */
+    margin-right: 5px; /* Space between checkbox and label */
+}
+
+.consent label {
+    order: 0; /* Keep label before the checkbox */
+    font-size: 14px;
+    color: #555;
+    flex-grow: 1; /* Allow label to take up space */
+}
+
+.consent a {
+    color: #007BFF;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.consent a:hover {
+    color: #0056B3;
+    text-decoration: underline;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+}
+
+.popup-content h3 {
+  margin-top: 0;
+}
+
+.popup-content button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.popup-content button:hover {
+  background-color: #0056b3;
+}
+
   
   form button {
     display: block;
@@ -264,6 +388,59 @@ main {
     padding: 20px 0;
     font-size: 0.9rem;
   }
+
+  .content {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.content h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.content ul li {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+
+.content ul li::before {
+    content: "🏀"; /* Basketball icon */
+    margin-right: 0.8rem;
+    font-size: 1.2rem;
+    color: #1e73fa;
+}
+
+.btn-register {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.8rem 1.5rem;
+    background-color: #1e73fa;
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.btn-register:hover {
+    background-color: #0055aa;
+}
   
   /* Ensure footer stays at the bottom */
   body > footer {
@@ -289,6 +466,18 @@ main {
     margin-bottom: 20px;
     color: #000000
   }
+  textarea {
+    width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none;
+}
+
   
   .hero .cta-button {
     background: linear-gradient(90deg, #007BFF, #0056B3);
@@ -330,12 +519,8 @@ main {
     .hero p {
       font-size: 1rem;
     }
-  
-    form input,
-    form select,
-    form textarea {
-      font-size: 0.9rem;
-    }
+ 
+    
   
     .registration-box,
     .rules-box,

@@ -18,21 +18,27 @@
     </nav>
   </header>
 
-  <main>
+  <div class="container">
     <h2>Contact Us</h2>
     <form action="/submit-contact" method="POST">
-      <label for="name">Your Name:</label>
-      <input type="text" id="name" name="name" required>
-
-      <label for="email">Your Email:</label>
-      <input type="email" id="email" name="email" required>
-
-      <label for="message">Your Message:</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
-
+        <div class="form-group">
+            <label for="contact-name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+          </div>
+          <div class="form-group">
+            <label for="contact-email">Your Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+          </div>
+          <div class="form-group">
+            <label for="contact-message">Your Message</label>
+            
+          </div>
+          <div>
+             <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
       <button type="submit" class="cta-button">Submit</button>
     </form>
-  </main>
+    </div>
 
   <footer>
     <p>&copy; 2024 Basketball Tournament. All rights reserved.</p>
