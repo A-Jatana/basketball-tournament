@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Options</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background-color: #f4f4f4;
+    }
+
+    .container {
+      text-align: center;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      width: 90%;
+      max-width: 600px;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    .payment-option {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 20px 0;
+    }
+
+    .payment-option img {
+      width: 100px;
+      height: auto;
+      cursor: pointer;
+    }
+
+    .info {
+      margin-top: 20px;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background: #fafafa;
+    }
+
+    .info p {
+      margin: 0;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Select Payment Method</h2>
+    <div class="payment-option">
+      <div id="interac" onclick="showInteracInfo()">
+        <img src="images/interac-logo.jpg" alt="Interac e-Transfer" />
+        <p>Interac e-Transfer</p>
+      </div>
+      <div id="paypal" onclick="showPayPalInfo()">
+        <img src="images/paypal-logo.png" alt="PayPal" />
+        <p>PayPal</p>
+      </div>
+    </div>
+
+    <!-- Payment Info -->
+    <div id="interac-info" class="info hidden">
+      <p>Please send an e-transfer of <strong>$200 CAD</strong> to:</p>
+      <p><strong>Email:</strong> ultimate3v3@gmail.com</p>
+      <p>Make sure to include your <strong>team name</strong> in the message field.</p>
+    </div>
+
+    <div id="paypal-info" class="info hidden">
+      <p>You will be redirected to PayPal to complete your purchase securely.</p>
+      <p>If you do not have a PayPal account, you can also pay via PayPal using a credit or debit card.</p>
+      <a href="https://www.paypal.com" target="_blank" class="btn">Proceed to PayPal</a>
+    </div>
+  </div>
+
+  <script>
+    // Show Interac payment info
+    function showInteracInfo() {
+      document.getElementById('interac-info').classList.remove('hidden');
+      document.getElementById('paypal-info').classList.add('hidden');
+    }
+
+    // Show PayPal payment info
+    function showPayPalInfo() {
+      document.getElementById('paypal-info').classList.remove('hidden');
+      document.getElementById('interac-info').classList.add('hidden');
+    }
+  </script>
+</body>
+</html>
